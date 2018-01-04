@@ -10,7 +10,7 @@ git clone https://github.com/raymondwcs/firebase
 ```
 2. Open `public\index.html` in your Web browser
 
-The **CALCULATE** button isn't working yet.
+The **CALCULATE** button isn't working yet.  Let's fix this!
 
 ## Part 2
 3. Insert the following into the `handleSubmit(event)` function
