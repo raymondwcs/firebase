@@ -8,7 +8,7 @@ This tutorial outlines the steps of deploying a simple Web app to Google Firebas
 ```
 git clone https://github.com/raymondwcs/firebase
 ```
-2. Open `public\index.html` in your Web browser
+2. Open `public/index.html` in your Web browser
 
 The **CALCULATE** button isn't working yet.  Let's fix this!
 
