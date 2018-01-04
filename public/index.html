@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Simple Interest Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">		
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.2/react.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.6.2/react-dom.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.31.5/react-bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <script src="https://cdn.muicss.com/mui-0.9.35/react/mui-react.js"></script>
+    <link href="https://cdn.muicss.com/mui-0.9.35/css/mui.min.css" rel="stylesheet" type="text/css" media="screen" />
+  </head>
+  <body>
+    <div id="main"></div>
+    
+    <script type="text/babel">
+      class SimpleInterest extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            principal: 10000,
+            rate: 0.01,
+            time: 10,
+            interest: '?'
+          }
+          this.handleSubmit = this.handleSubmit.bind(this);
+        }
+        handleChange(field,event) {
+          var change = {};
+          change[field] = event.target.value;
+          this.setState(change);
+        }
+        handleSubmit(event) {
+		      //var interest = this.state.principal * this.state.rate * this.state.time;
+		      this.setState({interest:'?'})
+        }
+        render() {
+          //var Panel = ReactBootstrap.Panel;
+          var Form = mui.react.Form,
+              Input = mui.react.Input,
+              Button = mui.react.Button,
+              Container = mui.react.Container;
+          return (
+            <Container>
+              <legend>Simple Interest = {this.state.interest}</legend>
+              <Input name="principal" type="number" label="Principal" placeholder={this.state.principal} onChange={this.handleChange.bind(this,'principal')}/>
+              <Input name="rate" type="number" step="0.01" label="Interest Rate" placeholder={this.state.rate} onChange={this.handleChange.bind(this,'rate')}/>
+              <Input name="time" type="number" lable="Time" placeholder={this.state.time} onChange={this.handleChange.bind(this,'time')}/>
+              <Button variant="raised" onClick={this.handleSubmit}>Calculate</Button>
+            </Container>
+          );
+        }
+      }
+      ReactDOM.render(
+        <SimpleInterest />,
+        document.getElementById('main')
+      );
+    </script>
+  </body>
+</html>
