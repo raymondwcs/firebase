@@ -13,3 +13,23 @@ git clone https://github.com/raymondwcs/firebase
 The **CALCULATE** button isn't working yet.
 
 ## Part 2
+3. Insert the following into the `handleSubmit(event)` function
+```
+var i = this.state.principal * this.state.rate * this.state.time;
+this.setState({interest:i});
+```
+4. Reload `public/index.html`. The **CALCULATE** button should be working now!
+
+## Part 3
+5. Create a Google Firebase Project at the following URL.  Write down the **Project-ID**
+```
+https://console.firebase.google.com
+```
+6. Deploy your Web app to Google Firebase
+```
+cd ~/firebase
+firebase login
+firebase use Project-ID
+firebase deploy
+```
+7. Goto https://**Project-ID**.firebaseapp.com
