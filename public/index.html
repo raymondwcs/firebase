@@ -24,16 +24,17 @@
             time: 10,
             interest: '?'
           }
+          this.handleChange = this.handleChange.bind(this);
           this.handleSubmit = this.handleSubmit.bind(this);
         }
-        handleChange(field,event) {
+        handleChange(event) {
           var change = {};
-          change[field] = event.target.value;
+          change[event.target.name] = event.target.value;
           this.setState(change);
         }
         handleSubmit(event) {
-           
-           
+          // Let's calculate!
+
         }
         render() {
           var Form = mui.react.Form,
@@ -43,9 +44,9 @@
           return (
             <Container>
               <legend>Simple Interest = {this.state.interest}</legend>
-              <Input name="principal" type="number" label="Principal" placeholder={this.state.principal} onChange={this.handleChange.bind(this,'principal')}/>
-              <Input name="rate" type="number" step="0.01" label="Interest Rate" placeholder={this.state.rate} onChange={this.handleChange.bind(this,'rate')}/>
-              <Input name="time" type="number" label="Time" placeholder={this.state.time} onChange={this.handleChange.bind(this,'time')}/>
+              <Input name="principal" type="number" label="Principal" placeholder={this.state.principal} onChange={this.handleChange}/>
+              <Input name="rate" type="number" step="0.01" label="Interest Rate" placeholder={this.state.rate} onChange={this.handleChange}/>
+              <Input name="time" type="number" label="Time" placeholder={this.state.time} onChange={this.handleChange}/>
               <Button variant="raised" onClick={this.handleSubmit}>Calculate</Button>
             </Container>
           );
