@@ -20,7 +20,7 @@
           super(props);
           this.state = {
             principal: 10000,
-            rate: 0.01,
+            rate: 0.001,
             time: 10,
             interest: '?'
           }
@@ -45,7 +45,7 @@
             <Container>
               <legend>Simple Interest = {this.state.interest}</legend>
               <Input name="principal" type="number" label="Principal" placeholder={this.state.principal} onChange={this.handleChange}/>
-              <Input name="rate" type="number" step="0.01" label="Interest Rate" placeholder={this.state.rate} onChange={this.handleChange}/>
+              <Input name="rate" type="number" step="0.001" label="Interest Rate" placeholder={this.state.rate} onChange={this.handleChange}/>
               <Input name="time" type="number" label="Time" placeholder={this.state.time} onChange={this.handleChange}/>
               <Button variant="raised" onClick={this.handleSubmit}>Calculate</Button>
             </Container>
