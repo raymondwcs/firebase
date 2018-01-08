@@ -1,7 +1,7 @@
 # Google Firebase Hosting - A Quick Tutorial
 
 ## Introduction
-This tutorial outlines the steps of deploying a simple Web app to Google Firebase
+This tutorial outlines the steps of deploying a simple Web app to Google Firebase.
 
 ## Part 1
 1. Check out an *incomplete* Web app that computes simple interest.
