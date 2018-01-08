@@ -10,7 +10,7 @@ git clone https://github.com/raymondwcs/firebase
 ```
 2. Open `public/index.html` in your Web browser
 
-The **CALCULATE** button isn't working yet.  Let's fix this!
+You may notice that the **CALCULATE** button isn't working yet.  Let's fix this in Part 2!
 
 ## Part 2
 3. Insert the following into the `handleSubmit(event)` function.
@@ -32,4 +32,4 @@ firebase login
 firebase use Project-ID
 firebase deploy
 ```
-7. Goto https://**Project-ID**.firebaseapp.com
+7. Goto https://**Project-ID**.firebaseapp.com to see the Web app running live on the Internet.
