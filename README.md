@@ -21,7 +21,7 @@ this.setState({interest:i});
 4. Reload `public/index.html`. The **CALCULATE** button should be working now!
 
 ## Part 3
-5. Create a Google Firebase Project at the following URL.  Write down the **Project-ID**
+5. Create a Google Firebase Project at the following URL.  Name this project **interest**.  Write down the **Project-ID**
 ```
 https://console.firebase.google.com
 ```
