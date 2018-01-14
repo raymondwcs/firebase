@@ -13,10 +13,9 @@ git clone https://github.com/raymondwcs/firebase
 You may notice that the **CALCULATE** button isn't working yet.  Let's fix this in Part 2!
 
 ## Part 2
-3. Insert the following into the `handleSubmit(event)` function.
+3. Insert the following line into the `handleSubmit(event)` function.
 ```
 var i = this.state.principal * this.state.rate * this.state.time;
-this.setState({interest:i});
 ```
 4. Reload `public/index.html`. The **CALCULATE** button should be working now!
 
