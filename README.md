@@ -8,23 +8,23 @@ This tutorial outlines the steps of deploying a simple Web app to Google Firebas
 ```
 git clone https://github.com/raymondwcs/firebase
 ```
-2. Open `public/index.html` in your Web browser
+2. Open `public/index.html` in your Web browser.
 
-You may notice that the **CALCULATE** button isn't working yet.  Let's fix this in Part 2!
+The **CALCULATE** button isn't working yet.  Let's fix this in Part 2!
 
 ## Part 2
-3. Insert the following line into the `handleSubmit(event)` function.
+3. Insert the following line, which calculates simple interest, into the `handleSubmit(event)` function.
 ```
 var i = this.state.principal * this.state.rate * this.state.time;
 ```
 4. Reload `public/index.html`. The **CALCULATE** button should be working now!
 
 ## Part 3
-5. Create a Google Firebase Project at the following URL.  Name this project **interest**.  Write down the **Project-ID**
+5. Create a Google Firebase Project at the following URL.  Name this project **interest**.  Write down the **Project-ID**.
 ```
 https://console.firebase.google.com
 ```
-6. Deploy your Web app to Google Firebase
+6. Deploy your Web app to Google Firebase.
 ```
 cd ~/firebase
 firebase login
