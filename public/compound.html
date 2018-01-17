@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Simple Interest Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">		
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.2/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.6.2/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.31.5/react-bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <script src="https://cdn.muicss.com/mui-0.9.35/react/mui-react.js"></script>
+    <link href="https://cdn.muicss.com/mui-0.9.35/css/mui.min.css" rel="stylesheet" type="text/css" media="screen" />
+  </head>
+  <body>
+    <div id="main"></div>
+    
+    <script type="text/babel">
+      class SimpleInterest extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            principal: 10000,
+            rate: 0.001,
+            time: 10,
+            n: 1,
+            interest: '?'
+          }
+          this.handleChange = this.handleChange.bind(this);
+          this.handleSubmit = this.handleSubmit.bind(this);
+        }
+        handleChange(event) {
+          var change = {};
+          change[event.target.name] = event.target.value;
+          this.setState(change);
+        }
+        handleSubmit(event) {
+          // Let's calculate compound interest!
+          var i = (this.state.principal *
+                  Math.pow((1 + this.state.rate / this.state.n),this.state.n * this.state.time)) -
+                  this.state.principal;
+          //
+          this.setState({interest:i});
+        }
+        render() {
+          var Form = mui.react.Form,
+              Input = mui.react.Input,
+              Button = mui.react.Button,
+              Container = mui.react.Container;
+          return (
+            <Container>
+              <legend>Compound Interest = {this.state.interest}</legend>
+              <Input name="principal" type="number" label="Principal" placeholder={this.state.principal} onChange={this.handleChange}/>
+              <Input name="rate" type="number" step="0.001" label="Interest Rate" placeholder={this.state.rate} onChange={this.handleChange}/>
+              <Input name="time" type="number" label="Time" placeholder={this.state.time} onChange={this.handleChange}/>
+              <Input name="n" type="number" label="N" placeholder={this.state.n} onChange={this.handleChange}/>
+              <Button variant="raised" onClick={this.handleSubmit}>Calculate</Button>
+            </Container>
+          );
+        }
+      }
+      ReactDOM.render(
+        <SimpleInterest />,
+        document.getElementById('main')
+      );
+    </script>
+  </body>
+</html>
