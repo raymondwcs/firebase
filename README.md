@@ -6,7 +6,7 @@ This tutorial outlines the steps of deploying a simple Web app to Google Firebas
 ## Part 1
 1. Check out an *incomplete* Web app that computes simple interest.
 ```
-git clone https://github.com/raymondwcs/firebase
+git clone https://github.com/raymondwcs/firebase-hosting
 ```
 2. Open `public/index.html` in your Web browser.
 
@@ -26,7 +26,7 @@ https://console.firebase.google.com
 ```
 6. Deploy your Web app to Google Firebase.
 ```
-cd ~/firebase
+cd ~/firebase-hosting
 firebase login
 firebase use Project-ID
 firebase deploy
